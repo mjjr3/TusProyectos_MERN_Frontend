@@ -9,12 +9,17 @@ import ConfirmarCuenta from './paginas/ConfirmarCuenta'
 import { AuthProvider } from './context/AuthProvider'
 import RutaProtegida from './layouts/RutaProtegida'
 import Proyectos from './paginas/Proyectos'
+import NuevoProyecto from './paginas/NuevoProyecto'
+import { ProyectosProvider } from './context/ProyectosProvider'
+import Proyecto from './paginas/Proyecto'
+import EditarProyecto from './paginas/EditarProyecto'
 
 function App() {
 
   return (
     <BrowserRouter>
     <AuthProvider>
+      <ProyectosProvider>
     <Routes>
       <Route path="/" element={<AuthLayout/>}>
       <Route index element={<Login/>}/>
@@ -26,12 +31,15 @@ function App() {
 
       <Route path="/proyectos" element={<RutaProtegida/>}>
     <Route index element={<Proyectos/>}/>
+    <Route path="crear-proyecto" element={<NuevoProyecto/>}/>
+    <Route path=":id" element={<Proyecto/>}/>
+    <Route path="editar/:id" element={<EditarProyecto/>}/>
     </Route>
 
 
     </Routes>
 
-  
+    </ProyectosProvider>
     </AuthProvider>
     </BrowserRouter>
   )

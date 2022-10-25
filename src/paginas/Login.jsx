@@ -9,7 +9,7 @@ const Login = () => {
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
   const [alerta,setAlerta] = useState({})
-  const {auth,setAuth,cargando} = useAuth()
+  const {setAuth} = useAuth()
 
 
   const handleSubmit = async e => {
