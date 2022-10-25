@@ -18,7 +18,7 @@ const FormularioProyecto = () => {
 
 
 
-    useEffect(() => {        
+    useEffect(() => {   
        if(params.id){
         setId(proyecto._id)
         setNombre(proyecto.nombre)
